@@ -155,10 +155,6 @@ body {
   line-height: 18px;
 }
 
-.hide {
-  display: none;
-}
-
 /* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 450px) {
   .container {
