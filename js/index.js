@@ -20,19 +20,15 @@ const dayTimeImg = document.querySelector('.daytime-img');
 const now = new Date();
 const icon = document.querySelector('#search-icon');
 
-// ***** FUNCTIONS *****
-	// ===== LOADER =====
 const toggleLoader = () => {
 	icon.classList.toggle('ph-spinner-gap-bold');
 	containerEl.style.height = '100px';
 };
 
-  // ===== SHOW ERROR MESSAGE =====
 const showErrorMessage = () => {
   errorMessage.classList.remove('hide');
 };
 
-  // ===== SHOW DATE =====
 const showDate = (d) => {
   let days = ["Domingo", "Segunda", "Terça", "Quarta", "Quita", "Sexta", "Sábado"];
   let months = ["jan.", "fev", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."];
@@ -46,15 +42,13 @@ const showDate = (d) => {
   return `${day}, ${date} ${month} ${year}`;
 }
 
-// ===== CHANGE BACKGROUND IMAGE =====
 const time = new Date();
-if (time.getHours() >= 6 && time.getHours() < 20){
+if (time.getHours() >= 6 && time.getHours() < 18){
   dayTimeImg.style.backgroundImage="url('../img/day.jpeg')";
 } else {
   dayTimeImg.style.backgroundImage="url('../img/night.jpeg')"
 }  
 
-// ===== GET WEATHER DATA =====
 const getWeatherData = async(city) => {
   toggleLoader();
 
@@ -67,7 +61,6 @@ const getWeatherData = async(city) => {
   return data;
 };
 
-	// ===== SHOW WEATHER DATA =====
 const showWeatherData = async (city) => {
 	errorMessage.classList.add("hide");
 	
