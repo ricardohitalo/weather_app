@@ -73,7 +73,7 @@ const showWeatherData = async (city) => {
 		return;
 	}
 	
-	cityEl.innerText = `${data.name} |`;
+	cityEl.innerText = `${data.name}`;
 	temperatureEl.innerText = parseInt(data.main.temp);
 	conditionsEl.innerText = data.weather[0].description;
 	weatherIcon.setAttribute ("src", `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
@@ -86,7 +86,7 @@ const showWeatherData = async (city) => {
   weatherDataContainer.classList.remove("hide");
 	};
 
-// ***** EVENTS ***** 
+// ====== EVENTS ====== 
 btnSearch.addEventListener("click", () => {
 	const city = inputCity.value;
 	showWeatherData(city);
